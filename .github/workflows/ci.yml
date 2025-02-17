@@ -30,7 +30,7 @@ jobs:
       - name: Identify affected apps
         id: affected
         run: |
-          apps=$(nx affected:apps --base=origin/main --head=HEAD --plain)
+          apps=$(npx nx affected:apps --base=origin/main --head=HEAD --plain)
           echo "::set-output name=apps::$apps"
 
       - name: Deploy affected apps to Vercel

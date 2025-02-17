@@ -32,8 +32,8 @@ jobs:
         run: |
           apps=$(nx affected:apps --base=origin/main --head=HEAD --plain)
           echo "::set-output name=apps::$apps"
-    
-     - name: Deploy affected apps to Vercel
+
+      - name: Deploy affected apps to Vercel
         if: steps.affected_apps.outputs.apps != ''
         run: |
           for app in ${{ steps.affected_apps.outputs.apps }}; do

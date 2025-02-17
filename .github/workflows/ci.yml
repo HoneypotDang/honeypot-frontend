@@ -30,7 +30,7 @@ jobs:
       - name: Identify affected apps
         id: affected
         run: |
-          apps=$(npx nx affected:apps --base=origin/main --head=HEAD --plain)
+          apps=$(npx nx show projects --affected --base=origin/main --head=HEAD --plain)
           echo "::set-output name=apps::$apps"
 
       - name: Deploy affected apps to Vercel
@@ -40,8 +40,8 @@ jobs:
             if [ "$app" == "my-new-app" ]; then
               echo "Deploying my-new-app to Vercel..."
               vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --project prj_BXqjbtiNcJVZIPbnMeJCtBrUwyo7  
-            elif [ "$app" == "app2" ]; then
-              echo "Deploying app2 to Vercel..."
+            elif [ "$app" == "test-app-1" ]; then
+              echo "Deploying test-app-1 to Vercel..."
               vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --project prj_VrAFQ4xnmp1KdkuNeKwYusuXeAva  
             fi
           done

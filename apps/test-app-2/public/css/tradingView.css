@@ -1,0 +1,64 @@
+:root:not(.theme-dark) {
+    --tv-color-platform-background: #fff;
+    --tv-color-pane-background: #fff;
+    --tv-color-pane-background-secondary: #fff;;
+    --tv-color-toolbar-button-background-hover: #fff;;
+    --tv-color-toolbar-button-background-secondary-hover: red;
+    --tv-color-toolbar-button-background-expanded: #434651;
+    --tv-color-toolbar-button-text: #74FD05;
+    --tv-color-toolbar-button-text-hover: #74FD05;
+    --tv-color-toolbar-button-text-active: #74FD05;
+    --tv-color-toolbar-button-text-active-hover: #74FD05;
+    --tv-color-item-active-text: #74FD05;
+    --tv-color-toolbar-toggle-button-background-active: red;
+    --tv-color-toolbar-toggle-button-background-active-hover: magenta;
+    
+}
+.cusButton{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    line-height: 20px;
+}
+.cusButton.selected{
+    color: #74FD05;
+}
+
+.theme-dark:root {
+    --tv-color-platform-background: #1E2820;
+    --tv-color-pane-background: #1E2820;
+    --tv-color-pane-background-secondary: #1E2820;
+    --tv-color-toolbar-button-background-hover: #1E2820;
+    --tv-color-toolbar-button-background-secondary-hover: red;
+    --tv-color-toolbar-button-background-expanded: #1E2820;
+    --tv-color-toolbar-button-text: #74FD05;
+    --tv-color-toolbar-button-text-hover: #74FD05;
+    --tv-color-toolbar-button-text-active: #74FD05;
+    --tv-color-toolbar-button-text-active-hover: #74FD05;
+    --tv-color-item-active-text: rgb(6, 255, 6);
+    --tv-color-toolbar-toggle-button-background-active: red;
+    --tv-color-toolbar-toggle-button-background-active-hover: magenta;
+}
+#overlap-manager-root *[class^='input']:checked + *[class*='box'], 
+#overlap-manager-root *[class*=' input']:checked + *[class*='box'],
+#overlap-manager-root *[class^='tab'][class*=' active'],
+#overlap-manager-root *[class*=' tab'][class*=' active'],
+#overlap-manager-root *[class^='item'][class*=' isActive'], 
+#overlap-manager-root *[class*=' item'][class*=' isActive'],
+#overlap-manager-root *[class^='day'][class*=' selected'], 
+#overlap-manager-root *[class*=' day'][class*=' selected'],
+#overlap-manager-root *[class^='currentDay']:after, 
+#overlap-manager-root *[class*=' currentDay']:after,
+#overlap-manager-root button[class^='intent-primary']:not(:disabled), 
+#overlap-manager-root button[class*=' intent-primary']:not(:disabled) {
+  background: #74FD05 !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+.item-2IihgTnv.isActive-2IihgTnv, .item-2IihgTnv.isActive-2IihgTnv:active{
+    background-color: #74FD05 !important;
+}
+.value-2y-wa9jT {
+    font-size: 16px !important;
+    text-align: left
+}

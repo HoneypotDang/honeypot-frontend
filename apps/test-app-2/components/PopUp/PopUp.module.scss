@@ -1,0 +1,107 @@
+.pop-up {
+  //color
+  --primary-color: White; //text
+  --secondary-color: #31220c; //background
+  --secondary-color-light: #f7951d; //light background/border
+  --border-color: #f7951d50; //border
+  --success-color: #22a722; //success
+  --error-color: #f7941d; //error
+  --warning-color: #f7941d; //warning
+  --pending-color: #ecc94e; //pending
+
+  //general size
+  --border-size: 0.5rem;
+  --border-size-sm: 0.1rem;
+
+  --border-radius: 2rem;
+  --border-radius-sm: 0.5rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 1;
+
+  .pop-up-close-button {
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .pop-up-type-img {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .pop-up-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 15% 75% 10%;
+    width: 80%;
+    padding: 1rem;
+    max-width: 600px;
+    background-color: var(--secondary-color);
+    border-radius: 0.5rem;
+    z-index: 100;
+    border: var(--border-size-sm) solid var(--secondary-color-light);
+    border-radius: var(--border-radius-sm);
+
+    .pop-up-content {
+      flex-grow: 1;
+      padding: 1rem 0;
+      z-index: 100;
+      text-align: left;
+
+      .pop-up-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: white;
+        padding: 0.5rem;
+      }
+
+      .pop-up-text {
+        color: rgba(255, 255, 255, 0.5);
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &.normal {
+    .pop-up-container {
+      grid-template-columns: 90% 10%;
+    }
+  }
+
+  &.warning {
+    .pop-up-container {
+      border-color: var(--warning-color);
+    }
+  }
+
+  &.error {
+    .pop-up-container {
+      border-color: var(--error-color);
+    }
+  }
+
+  &.success {
+    .pop-up-container {
+      border-color: var(--success-color);
+    }
+  }
+
+  &.pending {
+    .pop-up-container {
+      border-color: var(--pending-color);
+    }
+  }
+}

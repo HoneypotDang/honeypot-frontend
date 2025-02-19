@@ -49,3 +49,4 @@ out
 
 .env.local
 .env
+.env.*

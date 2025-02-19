@@ -1,0 +1,9 @@
+{
+  "name": "pop2pump",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/pop2pump",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project pop2pump --web",
+  "targets": {}
+}

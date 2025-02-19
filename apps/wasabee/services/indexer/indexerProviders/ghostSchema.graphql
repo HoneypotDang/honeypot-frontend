@@ -1,0 +1,183 @@
+type Query {
+  pair(id: String!): Pair
+  pairs(
+    where: PairFilter
+    orderBy: String
+    orderDirection: String
+    before: String
+    after: String
+    limit: Int
+  ): PairPage!
+  erc20(id: String!): Erc20
+  erc20s(
+    where: Erc20Filter
+    orderBy: String
+    orderDirection: String
+    before: String
+    after: String
+    limit: Int
+  ): Erc20Page!
+  _meta: _meta
+}
+
+type Pair {
+  id: String!
+  token0Id: String!
+  token0: Erc20!
+  token1Id: String!
+  token1: Erc20!
+  depositedRaisedToken: BigInt!
+  depositedLaunchedToken: BigInt!
+  createdAt: BigInt!
+  createdTxHash: String!
+  endTime: BigInt!
+  status: BigInt!
+}
+
+type Erc20 {
+  id: String!
+  name: String!
+  symbol: String!
+  decimals: Int!
+}
+
+scalar BigInt
+
+type PairPage {
+  items: [Pair!]!
+  pageInfo: PageInfo!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+input PairFilter {
+  AND: [PairFilter]
+  OR: [PairFilter]
+  id: String
+  id_not: String
+  id_in: [String]
+  id_not_in: [String]
+  id_gt: String
+  id_lt: String
+  id_gte: String
+  id_lte: String
+  token0Id: String
+  token0Id_not: String
+  token0Id_in: [String]
+  token0Id_not_in: [String]
+  token0Id_gt: String
+  token0Id_lt: String
+  token0Id_gte: String
+  token0Id_lte: String
+  token1Id: String
+  token1Id_not: String
+  token1Id_in: [String]
+  token1Id_not_in: [String]
+  token1Id_gt: String
+  token1Id_lt: String
+  token1Id_gte: String
+  token1Id_lte: String
+  depositedRaisedToken: BigInt
+  depositedRaisedToken_not: BigInt
+  depositedRaisedToken_in: [BigInt]
+  depositedRaisedToken_not_in: [BigInt]
+  depositedRaisedToken_gt: BigInt
+  depositedRaisedToken_lt: BigInt
+  depositedRaisedToken_gte: BigInt
+  depositedRaisedToken_lte: BigInt
+  depositedLaunchedToken: BigInt
+  depositedLaunchedToken_not: BigInt
+  depositedLaunchedToken_in: [BigInt]
+  depositedLaunchedToken_not_in: [BigInt]
+  depositedLaunchedToken_gt: BigInt
+  depositedLaunchedToken_lt: BigInt
+  depositedLaunchedToken_gte: BigInt
+  depositedLaunchedToken_lte: BigInt
+  createdAt: BigInt
+  createdAt_not: BigInt
+  createdAt_in: [BigInt]
+  createdAt_not_in: [BigInt]
+  createdAt_gt: BigInt
+  createdAt_lt: BigInt
+  createdAt_gte: BigInt
+  createdAt_lte: BigInt
+  createdTxHash: String
+  createdTxHash_not: String
+  createdTxHash_in: [String]
+  createdTxHash_not_in: [String]
+  createdTxHash_gt: String
+  createdTxHash_lt: String
+  createdTxHash_gte: String
+  createdTxHash_lte: String
+  endTime: BigInt
+  endTime_not: BigInt
+  endTime_in: [BigInt]
+  endTime_not_in: [BigInt]
+  endTime_gt: BigInt
+  endTime_lt: BigInt
+  endTime_gte: BigInt
+  endTime_lte: BigInt
+  status: BigInt
+  status_not: BigInt
+  status_in: [BigInt]
+  status_not_in: [BigInt]
+  status_gt: BigInt
+  status_lt: BigInt
+  status_gte: BigInt
+  status_lte: BigInt
+}
+
+type Erc20Page {
+  items: [Erc20!]!
+  pageInfo: PageInfo!
+}
+
+input Erc20Filter {
+  AND: [Erc20Filter]
+  OR: [Erc20Filter]
+  id: String
+  id_not: String
+  id_in: [String]
+  id_not_in: [String]
+  id_gt: String
+  id_lt: String
+  id_gte: String
+  id_lte: String
+  name: String
+  name_not: String
+  name_in: [String]
+  name_not_in: [String]
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_ends_with: String
+  name_not_starts_with: String
+  name_not_ends_with: String
+  symbol: String
+  symbol_not: String
+  symbol_in: [String]
+  symbol_not_in: [String]
+  symbol_contains: String
+  symbol_not_contains: String
+  symbol_starts_with: String
+  symbol_ends_with: String
+  symbol_not_starts_with: String
+  symbol_not_ends_with: String
+  decimals: Int
+  decimals_not: Int
+  decimals_in: [Int]
+  decimals_not_in: [Int]
+  decimals_gt: Int
+  decimals_lt: Int
+  decimals_gte: Int
+  decimals_lte: Int
+}
+
+type _meta {
+  block: Int
+}
